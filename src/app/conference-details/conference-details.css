@@ -1,0 +1,36 @@
+.details-section {
+  max-width: 1100px;
+  margin: 25px auto;
+  padding: 0 20px;
+}
+
+.details-card {
+  background: white;
+  border-left: 5px solid #8b5cf6;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.details-card h2 {
+  color: #173b67;
+  margin-top: 0;
+}
+
+.details-card p {
+  margin: 15px 0;
+  color: #333;
+}
+
+.badge {
+  display: inline-block;
+  background: #eaf2fb;
+  color: #2f6fb4;
+  padding: 7px 12px;
+  border-radius: 8px;
+}
+
+.empty-details {
+  color: #64748b;
+  padding: 20px;
+}

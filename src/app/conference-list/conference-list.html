@@ -1,0 +1,57 @@
+<section class="conference-section" id="conference-list">
+
+  <h2>Liste des conférences à venir</h2>
+<input
+  type="text"
+  class="search-input"
+  placeholder="Tapez le titre de la conférence"
+  [(ngModel)]="searchTerm">
+  <p class="subtitle">
+    Cliquez sur une conférence pour afficher ses détails.
+  </p>
+
+  <div class="conference-container">
+
+    @for (conf of filteredConferences; track conf.id) {
+
+      <article
+  class="conference-card"
+  (click)="selectConference(conf)">
+
+        <h3>{{ conf.title | uppercase }}</h3>
+
+        <p>
+          <strong>Date :</strong><br>
+          {{ conf.date | date:'dd/MM/yyyy' }}
+        </p>
+
+        <p>
+          <strong>Lieu :</strong> {{ conf.place }}
+        </p>
+
+        <p>
+          <strong>Places restantes :</strong>
+          {{ getRemainingPlaces(conf) }}
+        </p>
+
+<button
+  class="btn-inscription"
+  [ngClass]="getButtonClass(conf)"
+  [disabled]="getRemainingPlaces(conf) === 0"
+  (click)="$event.stopPropagation(); register(conf)">
+  S'inscrire
+</button>
+
+      </article>
+
+    } @empty {
+
+      <p class="empty-message">
+        Aucune conférence disponible.
+      </p>
+
+    }
+
+  </div>
+
+</section>

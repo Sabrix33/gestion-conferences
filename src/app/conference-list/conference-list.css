@@ -1,0 +1,143 @@
+/* Section principale */
+.conference-section {
+  padding: 30px;
+  margin: 30px auto;
+  max-width: 1100px;
+  background: white;
+  border-left: 5px solid #26a269;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Titre principal */
+.conference-section h2 {
+  color: #173b67;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+/* Grille des conférences */
+.conference-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* Carte individuelle */
+.conference-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  min-height: 250px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  transition: 0.2s;
+}
+
+/* Effet au survol */
+.conference-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+}
+
+/* Titre de chaque conférence */
+.conference-card h3 {
+  color: #173b67;
+  font-size: 18px;
+  margin: 0 0 15px;
+}
+
+/* Informations */
+.conference-card p {
+  color: #333;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* Bouton d'inscription */
+.btn-inscription {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+
+  min-width: 110px;
+  margin-top: auto;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Vert : 10 places ou plus */
+.available {
+  background-color: #198754;
+}
+
+/* Orange : moins de 10 places */
+.few {
+  background-color: #f59e0b;
+}
+
+/* Rouge : aucune place */
+.full {
+  background-color: #dc2626;
+  cursor: not-allowed;
+}
+
+/* Survol du bouton */
+.btn-inscription:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+/* Liste vide */
+.empty-message {
+  color: #64748b;
+  font-size: 16px;
+  padding: 20px;
+  grid-column: 1 / -1;
+}
+
+/* Tablettes */
+@media (max-width: 900px) {
+  .conference-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobiles */
+@media (max-width: 560px) {
+  .conference-container {
+    grid-template-columns: 1fr;
+  }
+
+  .conference-section {
+    padding: 20px;
+    margin: 15px;
+  }
+}
+.search-input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+
+  border: 1px solid #dbe2ea;
+  border-radius: 10px;
+
+  font-size: 15px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #2f6fb4;
+  box-shadow: 0 0 0 3px rgba(47, 111, 180, 0.12);
+}

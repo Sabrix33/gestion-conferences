@@ -1,0 +1,46 @@
+<section class="details-section" id="conference">
+
+  @if (conference) {
+
+    <div class="details-card">
+
+      <h2>🎤 Détail de la conférence</h2>
+
+      <p class="badge">Conférence sélectionnée depuis la liste.</p>
+
+      <p>
+        <strong>Titre :</strong>
+        {{ conference.title | uppercase }}
+      </p>
+
+      <p>
+        <strong>Description :</strong>
+        {{ conference.description }}
+      </p>
+
+      <p>
+        <strong>Lieu :</strong>
+        {{ conference.place }}
+      </p>
+
+      <p>
+        <strong>Date :</strong>
+        {{ conference.date | date:'yyyy-MM-dd' }}
+      </p>
+
+      <p>
+        <strong>Places disponibles :</strong>
+        {{ conference.maxParticipants - conference.nbParticipants }}
+      </p>
+
+    </div>
+
+  } @else {
+
+    <p class="empty-details">
+      Sélectionnez une conférence pour afficher ses détails.
+    </p>
+
+  }
+
+</section>
